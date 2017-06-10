@@ -12,7 +12,7 @@ def isRotation(s1, s2):
 
 	ccat = s1 + s1
 
-	return isSubstring(s2, s1)
+	return isSubstring(ccat, s2)
 
 
 class TestCases(unittest.TestCase):
@@ -20,10 +20,10 @@ class TestCases(unittest.TestCase):
 		self.assertFalse(isRotation("a", "b"))
 
 	def test_simple_yes(self):
-		self.assertFalse(isRotation("ab", "ba"))
+		self.assertTrue(isRotation("ab", "ba"))
 
 	def test_complex_yes(self):
-		self.assertFalse(isRotation("erbottlewat", "waterbottle"))
+		self.assertTrue(isRotation("erbottlewat", "waterbottle"))
 
 if __name__ == '__main__':
     unittest.main()
